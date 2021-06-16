@@ -25,9 +25,14 @@ class Profile extends Component {
     }
     
     render() {
+        console.log(this.state.data)
+        const user = this.state.data
         return(
             <div>
-                <h1>Profile</h1>            
+                <h1>Welcome {user.name}!</h1>
+                <div>
+                <UserEdit />                       
+                </div>            
             </div>
         )
     }
