@@ -31,7 +31,7 @@ class Profile extends Component {
             <div>
                 <h1>Welcome {user.name}!</h1>
                 <div>
-                <UserEdit />                       
+                                   
                 </div>            
             </div>
         )
