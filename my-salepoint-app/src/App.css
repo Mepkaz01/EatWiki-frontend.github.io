@@ -10,7 +10,7 @@
     min-height: 340px;
     border: 2px solid black;
     /* padding: 30px; */
-    /* border-radius: 5px; */
+    border-radius: 5px;
     background-color: white;
     align-items: center;
   }
@@ -48,4 +48,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+.labelst {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  border-start-start-radius: 5px;
+  border-end-start-radius: 5px;
+  border: 0.25px solid;
+  border-right: 0;
+
+  background: rgb(238, 238, 238);
+  /* border-right: 8px solid rgb(238, 238, 238); */
+  margin-right: 2px;
+ 
+  
+  padding: 4.5px 6px 9px 10px;
 }
