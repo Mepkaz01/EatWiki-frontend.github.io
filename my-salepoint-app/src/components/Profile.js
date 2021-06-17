@@ -77,6 +77,9 @@ class Profile extends Component {
                   <Link to="/posts/:userid">Your Inbox</Link>
                   {/* Messages from userid */}
                   <Link to="/posts/:userid">Your Outbox</Link>
+                  <UserItems 
+                    userId={user.id}
+                    /> 
                 </div>            
             </div>
         )

@@ -1,27 +1,46 @@
 import axios from 'axios'
 import React from 'react'
 import { Link } from "react-router-dom";
-import UserItems from "./UserItems";
+
 
 class Items extends React.Component {
 
     constructor(props){ 
     super(props)
     this.state={
-        items:[]
-    }
+        items:[],
+             
+        
+    };
 }
+
 componentDidMount =()=>{
     axios.get("http://localhost:3001/items/all").then(
         resp =>{
             console.log(resp)
             this.setState({
-                items:resp.data
+                items: resp.data
+                
+                
             })
         }
     )
 }
 
+
+
+handleDelete = (event) => {
+    event.preventDefault()
+
+    axios.delete(`http://localhost:3001/items/${this.props.match.params.indx}`)
+    .then(resp => {
+        console.log("Item Deleted");
+        console.log(resp)
+        // this.props.history.push('/')
+        this.props.history.push('/items')
+    })       
+    
+}
 
 
 
@@ -46,8 +65,11 @@ render = ()=>{
                 </div>
             )}
             </div>
+
+            <Link to="/">Back to Home Page</Link>
+        </div>    
             
-        </div>
+     
     )
 }
 }
