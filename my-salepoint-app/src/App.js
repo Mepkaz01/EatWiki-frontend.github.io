@@ -9,6 +9,7 @@ import Items from "./components/Items"
 import Item from "./components/Item"
 import AddItem from "./components/AddItem"
 import UserItems from "./components/UserItems"
+import ItemEdit from "./components/ItemEdit"
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
       <Route path="/profile/:id" render={(props) => <Profile {...props}/>}/>
 
-      <Route path="/items" exact render={ () =><Items />}/>
+      <Route path="/items" exact render={ (props) =><Items {...props} />}/>
 
       {/* only user item CRUD  */}
 
@@ -31,6 +32,8 @@ function App() {
       <Route path="/item/:indx" render={ (props) =><Item {...props}/>}/>
 
       <Route path="/additem" render={(props) => <AddItem {...props}/>}/>  
+
+      <Route path="/itemedit/:indx" render={(props) => <ItemEdit {...props}/>}/> 
 
     </div>
   );
