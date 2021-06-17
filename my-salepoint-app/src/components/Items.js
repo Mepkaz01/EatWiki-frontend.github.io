@@ -8,15 +8,19 @@ class Items extends React.Component {
     constructor(props){ 
     super(props)
     this.state={
-        items:[]
-    }
+        items:[],
+        userId: ""     
+        
+    };
 }
 componentDidMount =()=>{
     axios.get("http://localhost:3001/items/all").then(
         resp =>{
             console.log(resp)
             this.setState({
-                items:resp.data
+                items: resp.data,
+                
+                
             })
         }
     )
@@ -38,6 +42,8 @@ render = ()=>{
             )}
             </div>
             <Link to="/">Back to Home Page</Link>
+            
+             
         </div>
     )
 }
