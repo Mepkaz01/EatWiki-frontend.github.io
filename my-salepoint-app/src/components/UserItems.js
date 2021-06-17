@@ -4,11 +4,24 @@ import React, {Component} from 'react'
 
 class UserItems extends React.Component {
 
-    constructor(props){ 
-    super(props)
-    this.state={
-                
+    constructor (props) { 
+        super(props)
+        this.state = {
+             items: [],
+               
     }
+}
+
+    componentDidMount =()=>{
+        axios.get("http://localhost:3001/items/all")
+        .then(resp => {
+            console.log(resp)
+            this.setState ({
+                items: resp.data
+               
+            })
+        }
+    )
 }
     
     render = (props)=>{
@@ -16,10 +29,21 @@ class UserItems extends React.Component {
             return(
                 <div>
                     <h1>Your Listings</h1>
+                    
                     <div>
-                        {props.items.userId(item => 
-                            <h1>{item.itemName}</h1>
-                        )}
+                        {this.state.items.map(item => {
+                            return item.userId === this.props.userId ?
+                            <div>
+                                <img src={item.image} width="300" height="200"/> 
+                                <h2>{item.itemName}</h2>
+                                <h3>{item.category}</h3>
+                                <h2>${item.price}</h2>
+                                <h4>{item.status}</h4>
+                                <h4>{item.description}</h4>
+                            </div> 
+
+                            : null
+                        })}
                     </div>
                 </div>
             ) 
