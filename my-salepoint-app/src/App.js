@@ -21,7 +21,7 @@ function App() {
 
       <Route path="/items" exact render={ () =><Items />}/>
 
-      <Route path="/items/:userid" render={ () =><UserItems />}/>
+      <Route path="/items/:userid" render={ (props) =><UserItems {...props} />}/>
 
     </div>
   );
