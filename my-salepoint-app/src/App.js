@@ -6,6 +6,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Profile from "./components/Profile"
 import Items from "./components/Items"
+import UserItems from "./components/UserItems"
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
 
       <Route path="/profile/:id" render={(props) => <Profile {...props}/>}/>
 
-      <Route path="/items" render={ () =><Items />}/>
+      <Route path="/items" exact render={ () =><Items />}/>
+
+      <Route path="/items/:userid" render={ () =><UserItems />}/>
 
     </div>
   );

@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ProfileEdit from "./ProfileEdit";
+import UserItems from "./UserItems";
+
 
 class Profile extends Component {
     constructor(props) {
@@ -63,14 +65,18 @@ class Profile extends Component {
             <div>
                 <h1>Welcome {user.name}!</h1>
                 <div>
-
-                <ProfileEdit 
-                  user={user}
-                  handleChange={this.handleChange}
-                  handleSubmit={this.handleSubmit}
-                  handleDelete={this.handleDelete}
-                />                       
-
+                  <ProfileEdit 
+                    user={user}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                    handleDelete={this.handleDelete}
+                  />
+                  {/* Items by userid */}
+                  <Link to="/items/:userid">View Your Listings</Link> 
+                  {/* Messages to userid */}
+                  <Link to="/posts/:userid">Your Inbox</Link>
+                  {/* Messages from userid */}
+                  <Link to="/posts/:userid">Your Outbox</Link>
                 </div>            
             </div>
         )
