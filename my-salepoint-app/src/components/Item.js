@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class Item extends React.Component {
 
@@ -20,6 +21,18 @@ componentDidMount =()=>{
     )
 }
 
+handleDelete = (event) => {
+    event.preventDefault()
+
+    axios.delete(`http://localhost:3001/items/${this.props.match.params.indx}`)
+    .then(resp => {
+        console.log("Item Deleted");
+        console.log(resp)
+        // this.props.history.push('/')
+        this.props.history.push('/items')
+    })       
+    
+}
 render = ()=>{
     const item=this.state.item
 
@@ -35,7 +48,7 @@ render = ()=>{
                 <h3>{'$ '}<span style={{color:'blue'}}>{item.price}</span></h3>
                 <h5 key={item.id}>{item.description}</h5>
                 </div>
-            
+            <button onClick={this.handleDelete}> Are Sure</button> <Link to="/items"><button> Cancel</button></Link>
             </div>
         </div>
     )

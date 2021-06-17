@@ -13,6 +13,7 @@ class ItemEdit extends Component {
                 status: "",
                 description:"",
                 image: "",
+                userId:""
                
                 
             }
@@ -65,9 +66,11 @@ componentDidMount = () => {
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Item Name :</label><input onChange={this.handleChange} type="text" name="itemName" value={item.itemName}placeholder=" itemName" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Category :</label><input onChange={this.handleChange} type="text" name="category" value={ item.category} placeholder="category" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Item Price :</label><input onChange={this.handleChange} type="text" name="price" value={item.price} placeholder="price" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}} /></div>
-                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Item Name :</label><input onChange={this.handleChange} type="text" name="status" value={item.status} placeholder="status"style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}} /> </div>                
-                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Item Name :</label><input onChange={this.handleChange} type="text" name="description" value={item.description}  placeholder="description" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>  </div>               
-                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Item Name :</label><input onChange={this.handleChange} type="text" name="image" value={item.image} placeholder="status" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>   </div>              
+                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Status :</label><input onChange={this.handleChange} type="text" name="status" value={item.status} placeholder="status"style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}} /> </div>                
+                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Description :</label><input onChange={this.handleChange} type="text" name="description" value={item.description}  placeholder="description" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>  </div>               
+                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> image :</label><input onChange={this.handleChange} type="text" name="image" value={item.image} placeholder="Image" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>   </div>              
+                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> User ID :</label><input onChange={this.handleChange} type="text" name="userId" value={item.userId} placeholder="UserID" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>   </div>              
+
                 <input type="submit" value="List Item" style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}/>           
                 </form>
             </div>
