@@ -8,6 +8,8 @@ import Profile from "./components/Profile"
 import Items from "./components/Items"
 import Item from "./components/Item"
 import AddItem from "./components/AddItem"
+import UserItems from "./components/UserItems"
+
 
 function App() {
   return (
@@ -20,11 +22,15 @@ function App() {
 
       <Route path="/profile/:id" render={(props) => <Profile {...props}/>}/>
 
-      <Route path="/items" render={ () =><Items />}/>
+      <Route path="/items" exact render={ () =><Items />}/>
+
+      {/* only user item CRUD  */}
+
+      <Route path="/items/:userid" render={ (props) =><UserItems {...props} />}/>  
 
       <Route path="/item/:indx" render={ (props) =><Item {...props}/>}/>
 
-      <Route path="/additem" render={(props) => <AddItem {...props}/>}/>
+      <Route path="/additem" render={(props) => <AddItem {...props}/>}/>  
 
     </div>
   );

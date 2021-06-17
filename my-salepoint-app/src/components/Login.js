@@ -44,8 +44,8 @@ class Login extends Component {
             <div>
                 <h2>Log In</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" name="username" placeholder="username" />
-                    <input onChange={this.handleChange} type="password" name="password" placeholder="password" />
+                    username: <input onChange={this.handleChange} type="text" name="username" placeholder="username" />
+                    password: <input onChange={this.handleChange} type="password" name="password" placeholder="password" />
                     <input type="submit" value="Login"/>
                 </form>
             </div>
