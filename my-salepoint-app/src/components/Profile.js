@@ -63,12 +63,14 @@ class Profile extends Component {
             <div>
                 <h1>Welcome {user.name}!</h1>
                 <div>
+
                 <ProfileEdit 
                   user={user}
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
                   handleDelete={this.handleDelete}
                 />                       
+
                 </div>            
             </div>
         )

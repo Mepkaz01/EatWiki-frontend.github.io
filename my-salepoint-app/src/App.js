@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Profile from "./components/Profile"
+import Items from "./components/Items"
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Route path="/signup" render={(props) => <Signup {...props}/>}/>
 
       <Route path="/profile/:id" render={(props) => <Profile {...props}/>}/>
+
+      <Route path="/items" render={ () =><Items />}/>
 
     </div>
   );
