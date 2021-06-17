@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ProfileEdit from "./ProfileEdit";
 
 class Profile extends Component {
     constructor(props) {
@@ -23,6 +24,37 @@ class Profile extends Component {
             })    
         })
     }
+
+    handleChange = (event) => {
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data, 
+                [event.target.name]: event.target.value
+            }    
+        }))        
+
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.put(`http://localhost:3001/user/profile/${this.props.match.params.id}`, this.state.data)
+        .then(resp => {
+            console.log("User Updated")
+            console.log(resp)
+        })
+    }
+
+    handleDelete = (event) => {
+        event.preventDefault()
+
+        axios.delete(`http://localhost:3001/user/profile/${this.props.match.params.id}`)
+        .then(resp => {
+            console.log("User Deleted");
+            console.log(resp)
+            this.props.history.push('/')
+        })       
+        
+    }
     
     render() {
         console.log(this.state.data)
@@ -31,7 +63,12 @@ class Profile extends Component {
             <div>
                 <h1>Welcome {user.name}!</h1>
                 <div>
-                <UserEdit />                       
+                <ProfileEdit 
+                  user={user}
+                  handleChange={this.handleChange}
+                  handleSubmit={this.handleSubmit}
+                  handleDelete={this.handleDelete}
+                />                       
                 </div>            
             </div>
         )

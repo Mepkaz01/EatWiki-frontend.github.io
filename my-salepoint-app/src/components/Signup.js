@@ -30,7 +30,7 @@ class Signup extends Component {
         .then(resp => {
             console.log("User Created")
             console.log(resp)
-            this.props.history.push(`/profile/${resp.data.user.id}`)
+            this.props.history.push(`/profile/${resp.data.id}`)
         })
         .catch(err => {
             console.log(err)
@@ -43,10 +43,10 @@ class Signup extends Component {
             <div>
                 <h2>Sign Up</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" name="name" placeholder="name" />
-                    <input onChange={this.handleChange} type="text" name="username" placeholder="username" />
-                    <input onChange={this.handleChange} type="password" name="password" placeholder="password" />
-                    <input onChange={this.handleChange} type="text" name="email" placeholder="email" />                 
+                    name: <input onChange={this.handleChange} type="text" name="name" placeholder="name" />
+                    username: <input onChange={this.handleChange} type="text" name="username" placeholder="username" />
+                    password: <input onChange={this.handleChange} type="password" name="password" placeholder="password" />
+                    email: <input onChange={this.handleChange} type="text" name="email" placeholder="email" />                 
                     <input type="submit" value="Sign Up" />           
                 </form>
             </div>
