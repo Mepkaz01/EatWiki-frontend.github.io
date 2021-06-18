@@ -29,44 +29,27 @@ componentDidMount =()=>{
 
 
 
-handleDelete = (event) => {
-    event.preventDefault()
-
-    axios.delete(`http://localhost:3001/items/${this.props.match.params.indx}`)
-    .then(resp => {
-        console.log("Item Deleted");
-        console.log(resp)
-        // this.props.history.push('/')
-        this.props.history.push('/items')
-    })       
-    
-}
-
-
-
 render = ()=>{
 
     return(
         <div>
-            <h1> Items Sale </h1>
+            <h1>Sneak Peek at All of Our Users Listings</h1>
+            <h2>For more information <Link to="/signup">Sign Up</Link> or <Link to="/login">Log In</Link></h2>
+            <br></br>
+            <Link to="/">Back to Home Page</Link>
+            <br></br>
             <div className="App1">
-            {this.state.items.map(item =><div >
+            {this.state.items.map(item =>
                 <div>
-                    <Link to={`/item/${item.id}`}><button  style={{margin:'20px'}}>Delete Item</button></Link>
-                    <Link to={`/itemedit/${item.id}`}><button style={{margin:'20px'}}>Edit Item</button></Link>
-                    <Link to={'/additem'}><button  style={{margin:'20px'}}>Add Item</button></Link>
-                    </div>
-                <img src={item.image} alt="Pic" width='400'/>
-                <h3 key={item.id}>{item.itemName}</h3>
-                <h4 key={item.id}>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}</h4>
-                <h3>{'$ '}<span style={{color:'blue'}}>{item.price}</span></h3>
-                <h5 key={item.id}>{item.description}</h5>
-            
+                    
+                    <img src={item.image} alt="Pic" width='400'/>
+                    <h3 key={item.id}>{item.itemName}</h3>
+                    <h4 key={item.id}>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}</h4>
+                    <h3>{'$ '}<span style={{color:'blue'}}>{item.price}</span></h3>
+                    
                 </div>
             )}
             </div>
-
-            <Link to="/">Back to Home Page</Link>
         </div>    
             
      
