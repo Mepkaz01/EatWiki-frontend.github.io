@@ -71,12 +71,15 @@ class Profile extends Component {
                     handleSubmit={this.handleSubmit}
                     handleDelete={this.handleDelete}
                   />
+                  <br></br>
                   {/* Items by userid */}
                   {/* <Link to="/items/:userid">View Your Listings</Link>  */}
                   {/* Messages to userid */}
                   <Link to="/posts/:userid">Your Inbox</Link>
                   {/* Messages from userid */}
                   <Link to="/posts/:userid">Your Outbox</Link>
+                  <br></br>
+                  <br></br>
                   <UserItems 
                     userId={user.id}
                   /> 

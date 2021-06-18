@@ -33,7 +33,7 @@ render = ()=>{
 
     return(
         <div>
-            <h1>Sneak Peek at All of Our Users Listings</h1>
+            <h1>Sneak Peek at All of Our Users' Listings</h1>
             <h2>For more information <Link to="/signup">Sign Up</Link> or <Link to="/login">Log In</Link></h2>
             <br></br>
             <Link to="/">Back to Home Page</Link>
