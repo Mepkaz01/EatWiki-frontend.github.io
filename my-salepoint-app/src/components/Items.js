@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { Link } from "react-router-dom";
+import Icon from "react-crud-icons";
 
 
 class Items extends React.Component {
@@ -44,6 +45,7 @@ handleDelete = (event) => {
 
 
 
+
 render = ()=>{
 
     return(
@@ -52,9 +54,17 @@ render = ()=>{
             <div className="App1">
             {this.state.items.map(item =><div >
                 <div>
+                <div style={{width:'20px'}}><Icon
+        name = "edit"
+        tooltip = "Edit"
+        theme = "light"
+        size = "tiny"
+        // onClick = { doSomething }
+      /></div>
                     <Link to={`/item/${item.id}`}><button  style={{margin:'20px'}}>Delete Item</button></Link>
                     <Link to={`/itemedit/${item.id}`}><button style={{margin:'20px'}}>Edit Item</button></Link>
                     <Link to={'/additem'}><button  style={{margin:'20px'}}>Add Item</button></Link>
+                    {/* <button onClick={()=>{axios.delete(`http://localhost:3001/items/${item.id}`);  window.location.reload(false);}}>Click</button> */}
                     </div>
                 <img src={item.image} alt="Pic" width='400'/>
                 <h3 key={item.id}>{item.itemName}</h3>
