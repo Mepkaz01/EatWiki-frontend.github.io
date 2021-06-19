@@ -2,20 +2,22 @@ import axios from 'axios'
 import React from 'react'
 import { Link } from "react-router-dom";
 
-class Item extends React.Component {
+class ItemDelete extends React.Component {
 
     constructor(props){ 
     super(props)
     this.state={
-        item:{}
+        item:{
+            userId: ""
+        }
     }
 }
 componentDidMount =()=>{
-    axios.get(`http://localhost:3001/items/${this.props.match.params.indx}`).then(
-        resp =>{
-            console.log(resp)
-            this.setState({
-                item:resp.data
+    axios.get(`http://localhost:3001/items/${this.props.match.params.indx}`)
+    .then(resp =>{
+        console.log(resp)
+        this.setState({
+                item: resp.data
             })
         }
     )
@@ -29,11 +31,11 @@ handleDelete = (event) => {
         console.log("Item Deleted");
         console.log(resp)
         // this.props.history.push('/')
-        this.props.history.push('/items')
+        this.props.history.push(`/profile/${this.state.item.userId}`)
     })       
     
 }
-render = ()=>{
+render = (props)=>{
     const item=this.state.item
 
     return(
@@ -48,10 +50,10 @@ render = ()=>{
                 <h3>{'$ '}<span style={{color:'blue'}}>{item.price}</span></h3>
                 <h5 key={item.id}>{item.description}</h5>
                 </div>
-            <button onClick={this.handleDelete}> Are Sure</button> <Link to="/items"><button> Cancel</button></Link>
+            <button onClick={this.handleDelete}>Confirm Listing Removal</button> <Link to={`/profile/${item.userId}`}><button>Cancel</button></Link>
             </div>
         </div>
     )
 }
 }
-export default Item;
+export default ItemDelete;

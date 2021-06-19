@@ -6,8 +6,8 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Profile from "./components/Profile"
 import Items from "./components/Items"
-import Item from "./components/Item"
-import AddItem from "./components/AddItem"
+import ItemDelete from "./components/ItemDelete"
+import ItemAdd from "./components/ItemAdd"
 import UserItems from "./components/UserItems"
 import ItemEdit from "./components/ItemEdit"
 
@@ -25,13 +25,11 @@ function App() {
 
       <Route path="/items" exact render={ (props) =><Items {...props} />}/>
 
-      {/* only user item CRUD  */}
-
       <Route path="/items/:userid" render={ (props) =><UserItems {...props} />}/>  
 
-      <Route path="/item/:indx" render={ (props) =><Item {...props}/>}/>
+      <Route path="/itemdelete/:indx" render={ (props) =><ItemDelete {...props}/>}/>
 
-      <Route path="/additem" render={(props) => <AddItem {...props}/>}/>  
+      <Route path="/itemadd" render={(props) => <ItemAdd {...props}/>}/>  
 
       <Route path="/itemedit/:indx" render={(props) => <ItemEdit {...props}/>}/> 
 

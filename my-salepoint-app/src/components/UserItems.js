@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, {Component} from 'react'
+import { Link } from "react-router-dom";
+import ItemAdd from './ItemAdd';
 
 
 class UserItems extends React.Component {
@@ -23,12 +25,16 @@ class UserItems extends React.Component {
         }
     )
 }
+
     
     render = (props)=>{
             console.log(this.state.items)
             return(
                 <div>
                     <h1>Your Listings</h1>
+                    <ItemAdd userId={this.props.userId}/>
+                                         
+                    <Link to={'/itemadd'}><button  style={{margin:'20px'}}>Add Listing</button></Link>
                     
                     <div>
                         {this.state.items.map(item => {
@@ -40,6 +46,10 @@ class UserItems extends React.Component {
                                 <h2>${item.price}</h2>
                                 <h4>{item.status}</h4>
                                 <h4>{item.description}</h4>
+                                <br></br>
+                                <Link to={`/itemdelete/${item.id}`}><button  style={{margin:'20px'}}>Remove Listing</button></Link>
+                                <br></br>
+                                <Link to={`/itemedit/${item.id}`}><button style={{margin:'20px'}}>Edit Listing</button></Link>
                             </div> 
 
                             : null
