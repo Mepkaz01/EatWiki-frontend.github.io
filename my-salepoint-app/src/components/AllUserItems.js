@@ -28,6 +28,13 @@ componentDidMount =()=>{
     )
 }
 
+thousands_separators = (num) => 
+        {
+            let num_parts = num.toString().split(".");
+            num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return num_parts.join(".");
+        }
+
 filterBooks = () => {
     this.setState(
         {item: this.state.items.filter( category => 
@@ -96,11 +103,10 @@ render = () => {
             <div>
                     
                 <img src={item.image} alt="Pic" width='400'/>
-                <h3>{item.itemName}</h3>
+                <h3 key={item.id}>{item.itemName}</h3>
                 <h4>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}</h4>
-                <h3>{'$ '}<span style={{color:'blue'}}>{item.price}</span></h3>
-                <h2>{item.itemName}</h2>
-                <label>Contact Seller at </label><a href="#">{item.userEmail}</a>
+                <h3>{'$ '}<span style={{color:'blue'}}>{this.thousands_separators(item.price)}</span></h3>
+                <label>Contact Seller at </label><a href="https://www.gmail.com">{item.userEmail}</a>
             
             </div>
     )}

@@ -9,6 +9,8 @@ const ProfileEdit = (props) => {
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1">Username: </label><input onChange={props.handleChange} type="text" name="username" value={props.user.username} placeholder="username" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1">Password: </label><input onChange={props.handleChange} type="text" name="password" value={props.user.password} placeholder="password" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1">Email: </label><input onChange={props.handleChange} type="text" name="email" value={props.user.email} placeholder="email" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
+                <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1">User ID: </label><input onChange={props.handleChange} type="text" name="id" value={props.user.id} placeholder="user ID" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>
+
                 <input onChange={props.handleChange} type="submit" value="Edit User" style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}/>
             </form>
             <button onClick={props.handleDelete} style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}>Delete Access</button>

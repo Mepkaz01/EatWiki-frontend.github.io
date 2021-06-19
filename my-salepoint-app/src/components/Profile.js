@@ -78,7 +78,7 @@ class Profile extends Component {
                   <br></br>
                   <br></br>
                   <UserItems 
-                    userId={user.id}
+                    user={user}
                   />
                 </div>            
             </div>

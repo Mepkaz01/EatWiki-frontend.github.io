@@ -26,24 +26,30 @@ class UserItems extends React.Component {
     )
 }
 
+    thousands_separators = (num) => 
+        {
+            let num_parts = num.toString().split(".");
+            num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return num_parts.join(".");
+        }
+
     
     render = (props)=>{
             console.log(this.state.items)
             return(
                 <div>
                     <h1>Your Listings</h1>
-                    <ItemAdd userId={this.props.userId}/>
-                                         
+                                                            
                     <Link to={'/itemadd'}><button  style={{margin:'20px'}}>Add Listing</button></Link>
                     
-                    <div>
+                    <div style={{display:"flex"}}>
                         {this.state.items.map(item => {
-                            return item.userId === this.props.userId ?
+                            return item.userId === this.props.user.id ?
                             <div>
                                 <img src={item.image} width="300" height="200"/> 
                                 <h2>{item.itemName}</h2>
                                 <h3>{item.category}</h3>
-                                <h2>${item.price}</h2>
+                                <h2>${this.thousands_separators(item.price)}</h2>
                                 <h4>{item.status}</h4>
                                 <h4>{item.description}</h4>
                                 <br></br>
