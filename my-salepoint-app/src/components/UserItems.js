@@ -10,11 +10,13 @@ class UserItems extends React.Component {
         super(props)
         this.state = {
              items: [],
-               
+                           
+            }             
     }
-}
+   
 
     componentDidMount =()=>{
+             
         axios.get("http://localhost:3001/items/all")
         .then(resp => {
             console.log(resp)
@@ -28,17 +30,20 @@ class UserItems extends React.Component {
 
     
     render = (props)=>{
-            console.log(this.state.items)
+            console.log(this.props.user.id)
+            
             return(
                 <div>
                     <h1>Your Listings</h1>
-                    <ItemAdd userId={this.props.userId}/>
+                    <ItemAdd item={this.state.data} a={this.props.user.id} handleChange={this.handleChange} {...props}/>
                                          
-                    <Link to={'/itemadd'}><button  style={{margin:'20px'}}>Add Listing</button></Link>
+                    {/* <Link to={'/itemadd'}><button  style={{margin:'20px'}}>Add Listing</button></Link> */}
                     
-                    <div>
+                    <div>                    
+
+
                         {this.state.items.map(item => {
-                            return item.userId === this.props.userId ?
+                            return item.userId === this.props.user.id ?
                             <div>
                                 <img src={item.image} width="300" height="200"/> 
                                 <h2>{item.itemName}</h2>

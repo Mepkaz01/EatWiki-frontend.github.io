@@ -1,10 +1,12 @@
 import React, {Component} from "react"
 import axios from "axios"
 
+
 class ItemAdd extends Component {
     constructor(props) {
         super(props)
-        this.state= {
+              
+              this.state= {
             data: {
 
                 itemName:"",
@@ -13,13 +15,15 @@ class ItemAdd extends Component {
                 status: "",
                 description:"",
                 image: "",
-                userId: "1"             
+                userId: this.props.a          
                 
             }
         }
     }
 
     handleChange = (event) => {
+
+       
         this.setState(prevState => ({
             data: {
                 ...prevState.data,
@@ -27,16 +31,26 @@ class ItemAdd extends Component {
             }
         }))
     }
+   
 
     handleSubmit = (event) => {
         event.preventDefault()
+
+       
+            
         
-        axios.post("http://localhost:3001/items/newitem", this.state.data)
+        axios.post("http://localhost:3001/items/newitem", this.props.item)
         .then(resp => {
             console.log("item Created")
-            console.log(resp)
+            console.log("----------------------")
+            console.log(this.state.data.userId)
+            console.log(this.props.userId)
+            console.log("----------------------")
+            console.log(resp) 
+            console.log("----------------------")
+            console.log(resp.data.userId)
             // this.props.history.push(`/items`)
-            this.props.history.push(`/profile/${this.state.userId}`)
+            // this.props.history.push(`/profile/${this.state.data.userId}`)
         })
         .catch(err => {
             console.log(err)
@@ -44,7 +58,13 @@ class ItemAdd extends Component {
     }
 
     render() {
-        console.log(this.state.data)
+        
+      
+        console.log("----------------------")
+       
+        console.log(this.state.data.userId)
+        console.log(" Hi I have called in Add Item line 66")
+        console.log(this.state.data.userId)
         return (
             <div>
                 <h2>Add Item</h2>
@@ -55,7 +75,7 @@ class ItemAdd extends Component {
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Status :</label><input onChange={this.handleChange} type="text" name="status" placeholder="status"style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}} /> </div>                
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Description :</label><input onChange={this.handleChange} type="text" name="description" placeholder="description" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>  </div>               
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Image :</label><input onChange={this.handleChange} type="text" name="image" placeholder="image" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>   </div>    
-                {/* <div><input type="text" name="userId" value={this.state.userId} placeholder="userId" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>           */}
+                {/* <div><input onChange={this.props.handleChange}  type="text" name="userId" value={this.props.a} placeholder="userId" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/></div>           */}
                 <input type="submit" value="Confirm Add Listing" style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}/>           
                 </form>
             </div>

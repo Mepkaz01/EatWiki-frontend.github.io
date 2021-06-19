@@ -5,6 +5,7 @@ import ProfileEdit from "./ProfileEdit";
 import UserItems from "./UserItems";
 
 
+
 class Profile extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,8 @@ class Profile extends Component {
                 username: "",
                 password: "",
                 email: ""
-            }
+            }  
+            
         }
     }
 
@@ -25,7 +27,8 @@ class Profile extends Component {
                 data: resp.data
             })    
         })
-    }
+
+           }
 
     handleChange = (event) => {
         this.setState(prevState => ({
@@ -42,7 +45,7 @@ class Profile extends Component {
         axios.put(`http://localhost:3001/user/profile/${this.props.match.params.id}`, this.state.data)
         .then(resp => {
             console.log("User Updated")
-            console.log(resp)
+           
         })
     }
 
@@ -59,11 +62,11 @@ class Profile extends Component {
     }
     
     render() {
-        console.log(this.state.data)
+        // console.log(this.state.data)
         const user = this.state.data
         return(
             <div>
-                <h1>Welcome {user.name}!</h1>
+                <h1>Welcome  {user.name}!</h1>
                 <div>
                   <ProfileEdit 
                     user={user}
@@ -76,9 +79,10 @@ class Profile extends Component {
                   {/* Messages to userid */}
                   <Link to="/posts/:userid">Your Inbox</Link>
                   {/* Messages from userid */}
-                  <Link to="/posts/:userid">Your Outbox</Link>
+                  <Link to="/posts/:userid">Your Outbox</Link>                             
+
                   <UserItems 
-                    userId={user.id}
+                    user={user}
                   /> 
                 </div>            
             </div>
