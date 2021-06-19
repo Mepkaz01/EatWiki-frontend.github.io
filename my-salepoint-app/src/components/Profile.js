@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import ProfileEdit from "./ProfileEdit";
 import UserItems from "./UserItems";
+import AllUserItems from "./AllUserItems";
 
 
 class Profile extends Component {
@@ -71,18 +72,14 @@ class Profile extends Component {
                     handleSubmit={this.handleSubmit}
                     handleDelete={this.handleDelete}
                   />
+                  <br></br>                  
                   <br></br>
-                  {/* Items by userid */}
-                  {/* <Link to="/items/:userid">View Your Listings</Link>  */}
-                  {/* Messages to userid */}
-                  <Link to="/posts/:userid">Your Inbox</Link>
-                  {/* Messages from userid */}
-                  <Link to="/posts/:userid">Your Outbox</Link>
+                  <Link to="/allitems">View All Listings</Link>
                   <br></br>
                   <br></br>
                   <UserItems 
                     userId={user.id}
-                  /> 
+                  />
                 </div>            
             </div>
         )

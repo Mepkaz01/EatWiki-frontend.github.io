@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import { Link } from "react-router-dom";
 
 const ProfileEdit = (props) => {
     return (
@@ -11,6 +12,7 @@ const ProfileEdit = (props) => {
                 <input onChange={props.handleChange} type="submit" value="Edit User" style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}/>
             </form>
             <button onClick={props.handleDelete} style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}>Delete Access</button>
+            <Link to="/"><button style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}>Log Out</button></Link>
         </div>
     )
 }

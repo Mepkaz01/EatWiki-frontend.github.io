@@ -10,6 +10,7 @@ import ItemDelete from "./components/ItemDelete"
 import ItemAdd from "./components/ItemAdd"
 import UserItems from "./components/UserItems"
 import ItemEdit from "./components/ItemEdit"
+import AllUserItems from "./components/AllUserItems"
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
       <Route path="/itemadd" render={(props) => <ItemAdd {...props}/>}/>  
 
       <Route path="/itemedit/:indx" render={(props) => <ItemEdit {...props}/>}/> 
+
+      <Route path="/allitems" exact render={ (props) =><AllUserItems {...props} />}/>
 
     </div>
   );
