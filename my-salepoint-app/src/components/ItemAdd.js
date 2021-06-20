@@ -14,11 +14,11 @@ class ItemAdd extends Component {
                 description:"",
                 image: "",
                 userId: "",
-                userEmail: ""             
-                
+                userEmail: ""
             }
         }
     }
+
 
     handleChange = (event) => {
         this.setState(prevState => ({
