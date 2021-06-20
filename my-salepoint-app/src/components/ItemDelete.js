@@ -44,7 +44,7 @@ render = (props)=>{
             <h1> Item Sale </h1>
             <div className="App1">
             <div style={{marginTop:'30px'}} >
-                <img src={item.image} alt="Pic" width='400'/>
+                <img src={item.image} alt="Pic" width='400' height="300"/>
                 <fieldset style={{width:'400px', border:' solid blue 1px' ,borderRadius:'5px',padding:'20px 10px',marginBottom:'15px'}}>   
         <legend> Detail</legend>
                 <h3 key={item.id}>{item.itemName}</h3>

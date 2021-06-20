@@ -3,7 +3,7 @@ import { Link, Route } from "react-router-dom";
 
 const Home = () => {
     return (
-        <div>
+        <div className='profileImag' style={{height:'100%', width:'100%'}} >
             <nav>
             <Link to="/login">Log In</Link>
             <Link to="/signup">Sign Up</Link>

@@ -42,26 +42,11 @@ class ItemAdd extends Component {
    
 
     handleSubmit = (event) => {
-        event.preventDefault()
-      
-                   
+        event.preventDefault()                      
         axios.post("http://localhost:3001/items/newitem", this.state.data)
         .then(resp => {
-            // console.log("item Created")
-            // console.log("----------------------")
-            // console.log(this.state.data.userId)
-            
-            // console.log("----------------------")
-            // console.log(resp) 
-            // console.log("----------------------")
-            // console.log(resp.data.userId)
-            // this.props.history.push(`/items`)
-
-
-            // this.props.history.push(`/profile/${this.props.user.id}`)
             this.toggleSubmit()
-            this.props.ueritemToggle()
-
+            this.props.userItemToggle()
         })
         .catch(err => {
             console.log(err)
@@ -69,15 +54,7 @@ class ItemAdd extends Component {
     }
 
     render(props) {
-        
-        console.log(this.state.data.userid)
-      
-        console.log("----------------------")
-       
-        console.log(this.props.user.id)
-        console.log(" Hi I have called in Add Item line 66")
-        console.log(this.state.data.userId)
-        return (
+               return (
             <div>
                  { this.state.tog ? <div>
                 <h2>Add Item</h2>

@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url( 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcXj_-4A1SlWYhngvJSBL9LmU20gKcuTCY3w&usqp=CAU');
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%; */
+
 }
 
 code {
