@@ -1,16 +1,16 @@
 import axios from 'axios'
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from "react-router-dom";
-import Icon from "react-crud-icons";
 
 
-class Items extends React.Component {
+class AllUserItems extends Component {
 
     constructor(props){ 
     super(props)
     this.state={
         items: [],
         item: []
+        
              
         
     };
@@ -19,8 +19,10 @@ class Items extends React.Component {
 componentDidMount =()=>{
     axios.get("http://localhost:3001/items/all")
     .then(resp =>{
+        console.log(resp)
         this.setState({
             items: resp.data
+            
             })
         }
     )
@@ -80,48 +82,39 @@ filterWomenClothing = () => {
     this.setState(
         {item: this.state.items.filter( category => 
             category.category === "Women's Clothing")})}  
-
-
-
-render = ()=>{
-
-    return(
-        <div>
-            <h1>Sneak Peek at All of Our Members' Listings</h1>
-            <h2>For more information <Link to="/signup">Sign Up</Link> or <Link to="/login">Log In</Link></h2>
-            <br></br>
-            <Link to="/">Back to Home Page</Link>
-            <br></br>
-            <br></br>
-            <button onClick={this.filterBooks}>Books</button>
-            <button onClick={this.filterCars}>Cars</button>
-            <button onClick={this.filterGames}>Games</button>
-            <button onClick={this.filterElectronics}>Electronics</button>
-            <button onClick={this.filterFurniture}>Furniture</button>
-            <button onClick={this.filterMenAccessories}>Men's Accessories</button>
-            <button onClick={this.filterMenClothing}>Men's Clothing</button>
-            <button onClick={this.filterWomenAccessories}>Women's Accessories</button>
-            <button onClick={this.filterWomenClothing}>Women's Clothing</button>
-            <br></br>
-            <br></br>
-            <div className="App1">
-
-            {this.state.item.map(item =>
-                <div>
-                    
-                    <img src={item.image} alt="Pic" width='400'/>
-                    <h3>{item.itemName}</h3>
-                    <h4>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}</h4>
-                    <h3>{'$ '}<span style={{color:'blue'}}>{this.thousands_separators(item.price)}</span></h3>
-                    
-                </div>
-
-            )}
-            </div>
-        </div>    
             
-     
-    )
-}
-}
-export default Items;
+
+render = () => {
+  return (
+    <div>
+        <h1>Browse All Listings By Category</h1>
+        <button onClick={this.filterBooks}>Books</button>
+        <button onClick={this.filterCars}>Cars</button>
+        <button onClick={this.filterGames}>Games</button>
+        <button onClick={this.filterElectronics}>Electronics</button>
+        <button onClick={this.filterFurniture}>Furniture</button>
+        <button onClick={this.filterMenAccessories}>Men's Accessories</button>
+        <button onClick={this.filterMenClothing}>Men's Clothing</button>
+        <button onClick={this.filterWomenAccessories}>Women's Accessories</button>
+        <button onClick={this.filterWomenClothing}>Women's Clothing</button>
+        <br></br>
+        <br></br>
+          {this.state.item.map(item => 
+            <div>
+                    
+                <img src={item.image} alt="Pic" width='400'/>
+                <h3 key={item.id}>{item.itemName}</h3>
+                <h4>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}</h4>
+                <h3>{'$ '}<span style={{color:'blue'}}>{this.thousands_separators(item.price)}</span></h3>
+                <label>Contact Seller at </label><a href="https://www.gmail.com">{item.userEmail}</a>
+            
+            </div>
+    )}
+
+      
+    </div> 
+  )    
+}}
+
+
+export default AllUserItems

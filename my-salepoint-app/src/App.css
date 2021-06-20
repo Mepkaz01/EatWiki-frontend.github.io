@@ -51,7 +51,7 @@
 }
 .labelst {
   display: inline-block;
-  width: 100px;
+  width: 90px;
   text-align: right;
   border-start-start-radius: 5px;
   border-end-start-radius: 5px;
@@ -63,5 +63,5 @@
   margin-right: 2px;
  
   
-  padding: 4.5px 6px 9px 10px;
+  padding: 4.5px 10px 9px 10px;
 }
