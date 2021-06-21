@@ -86,7 +86,12 @@ filterWomenClothing = () => {
 
 render = () => {
   return (
-    <div>
+    <div> 
+    <nav style={{backgroundColor:'#03cffc',display:'flex', padding:'10px 30px',borderBottom:"3px solid", borderTop:'1px solid'}}>
+<Link to="/" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}}>Log Out</Link>
+<Link to="" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >About</Link>
+</nav>
+<div>
         <h1>Browse All Listings By Category</h1>
         <button onClick={this.filterBooks}>Books</button>
         <button onClick={this.filterCars}>Cars</button>
@@ -113,6 +118,7 @@ render = () => {
 
       
     </div> 
+    </div>
   )    
 }}
 

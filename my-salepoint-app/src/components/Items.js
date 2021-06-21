@@ -87,6 +87,12 @@ render = ()=>{
 
     return(
         <div>
+            <nav style={{backgroundColor:'#03cffc',display:'flex', padding:'10px 30px',borderBottom:"3px solid", borderTop:'1px solid'}}>
+            <Link to="/login" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}}>Log In</Link>
+            <Link to="/signup" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}}>Sign Up</Link>
+            <Link to="" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >About</Link>
+            </nav>
+            <div>
             <h1>Sneak Peek at All of Our Members' Listings</h1>
             <h2>For more information <Link to="/signup">Sign Up</Link> or <Link to="/login">Log In</Link></h2>
             <br></br>
@@ -118,7 +124,8 @@ render = ()=>{
 
             )}
             </div>
-        </div>    
+        </div>  
+        </div>  
             
      
     )
