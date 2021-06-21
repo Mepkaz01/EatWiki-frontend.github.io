@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
+
 class Items extends React.Component {
 
     constructor(props){ 
@@ -104,6 +105,7 @@ render = ()=>{
             <br></br>
             <br></br>
             <div className="App1">
+
             {this.state.item.map(item =>
                 <div>
                     
@@ -113,6 +115,7 @@ render = ()=>{
                     <h3>{'$ '}<span style={{color:'blue'}}>{this.thousands_separators(item.price)}</span></h3>
                     
                 </div>
+
             )}
             </div>
         </div>    
