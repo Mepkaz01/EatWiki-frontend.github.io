@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-import { Link } from "react-router-dom";
-import Icon from "react-crud-icons";
+import { Link, Route } from  'react-router-dom'
+import ShoppingCart from './ShoppingCart';
 
 
 class Items extends React.Component {
@@ -125,6 +125,8 @@ render = ()=>{
             )}
             </div>
         </div>  
+
+        
         </div>  
             
      

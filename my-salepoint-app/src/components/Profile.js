@@ -87,6 +87,7 @@ class Profile extends Component {
             <div>
                  <nav style={{backgroundColor:'#03cffc',display:'flex', padding:'10px 30px',borderBottom:"3px solid", borderTop:'1px solid'}}>
             <Link to="/" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}}>Log Out</Link>
+            <Link to="/cart" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >🛒Cart</Link>
             <Link to="" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >About</Link>
             </nav>
             <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center'}}>

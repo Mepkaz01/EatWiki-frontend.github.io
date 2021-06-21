@@ -1,9 +1,6 @@
 import axios from 'axios'
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
-import ShoppingCart from './ShoppingCart';
-
-
 
 class UserItems extends React.Component {
 

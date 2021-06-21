@@ -11,6 +11,7 @@ import ItemAdd from "./components/ItemAdd"
 import UserItems from "./components/UserItems"
 import ItemEdit from "./components/ItemEdit"
 import AllUserItems from "./components/AllUserItems"
+import ShoppingCart from './components/ShoppingCart';
 
 
 
@@ -37,6 +38,7 @@ function App() {
       <Route path="/itemedit/:indx" render={(props) => <ItemEdit {...props}/>}/> 
 
       <Route path="/allitems" exact render={ (props) =><AllUserItems {...props} />}/>
+      <Route path="/cart"  render={ (props) =><ShoppingCart {...props} />}/>
 
     </div>
   );
