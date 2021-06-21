@@ -84,10 +84,15 @@ class Profile extends Component {
        
 
         return(
-            <div style={{display:'flex', flexDirection:'column',justifyContent:'center'}}>
+            <div>
+                 <nav style={{backgroundColor:'#03cffc',display:'flex', padding:'10px 30px',borderBottom:"3px solid", borderTop:'1px solid'}}>
+            <Link to="/" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}}>Log Out</Link>
+            <Link to="" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >About</Link>
+            </nav>
+            <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                 <h1>Welcome  <span style={{color:'blue'}}>{user.name}!</span></h1>
                 <div >
-                    <div style={{display:'flex', justifyContent:'center', marginBottom:'7px'}}>
+                    <div style={{display:'flex',flexDirection:'column',alignItems:"center", justifyContent:'center', marginBottom:'7px'}}>
                   <ProfileEdit 
                     user={user}
                     handleChange={this.handleChange}
@@ -112,6 +117,7 @@ class Profile extends Component {
                   }
 
                 </div>            
+            </div>
             </div>
         )
     }
