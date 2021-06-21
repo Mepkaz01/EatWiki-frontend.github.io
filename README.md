@@ -1,4 +1,4 @@
-# My Sale Point-frontend.github.io by Patricia Huancaya and Waheed Alam
+# Sale Point-frontend.github.io by Patricia Huancaya and Waheed Alam
 
 * [Project Frontend URL](https://github.com/Mepkaz01/Project3-backend.github.io)
 * [Project Trello](https://trello.com/b/bM7PSAan/c4g-my-sale-point-app)
