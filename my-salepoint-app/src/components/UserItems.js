@@ -42,7 +42,7 @@ class UserItems extends React.Component {
             
             return(
                 <div style={{margin:'10px'}}>
-                    <h1>Your Listings</h1>
+                    <h1>My Listings</h1>
                     {/* <ShoppingCart  shop={this.state.items}/> */}
 
                                       
@@ -59,7 +59,7 @@ class UserItems extends React.Component {
                                 {/* <fieldset style={{width:'300px', border:' solid blue 1px' ,borderRadius:'5px',padding:'20px 10px',marginBottom:'15px'}}>   
         <legend> Detail</legend> */}
                                 <h3 key={item.id} style={{padding:'2px', margin:'5px'}}>{item.itemName}</h3>
-                                <h4 key={item.id} style={{padding:'2px', margin:'5px'}}>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}{' Price $'}<span style={{color:'blue'}} >{item.price}</span></h4>
+                                <h4 key={item.id} style={{padding:'2px', margin:'5px'}}>{item.category}{'  ( '}<span style={{color:'red'}}>{item.status}</span>{' )'}{' Price $'}<span style={{color:'blue'}} >{this.thousands_separators(item.price)}</span></h4>
                                 
                                 <p key={item.id} style={{padding:'2px', margin:'5px 0 10px 0'}}>{item.description}</p>
                                 {/* </fieldset> */}

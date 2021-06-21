@@ -29,6 +29,7 @@ class ItemAdd extends Component {
     this.setState({tog:!this.state.tog})
     }
     
+
     handleChange = (event) => {
 
        
@@ -66,16 +67,13 @@ class ItemAdd extends Component {
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Status: </label><input onChange={this.handleChange} type="text" name="status" placeholder="status"style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}} /> </div>                
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Description: </label><input onChange={this.handleChange} type="text" name="description" placeholder="description" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>  </div>               
                 <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Image: </label><input onChange={this.handleChange} type="text" name="image" placeholder="image" style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>   </div>    
-                {/* <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> User ID: </label> */}
+                
                 <input onChange={this.handleChange} type='hidden' name="userId" value={this.props.user.id} placeholder={this.props.user.id} style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>
-                {/* </div>   */}
-                {/* <div style={{marginBottom:'2px'}}><label  class="labelst" for="id1"> Email: </label> */}
+                
                 <input onChange={this.handleChange} type="hidden" name="userEmail" value={this.props.user.email} placeholder={this.props.user.email} style={{ padding: '10px 10px',borderTopRightRadius:'5px', borderEndEndRadius:'5px',border:'0.25px solid', borderLeft:'0'}}/>
-                {/* </div>   */}
-                {/* { this.state.tog ?  */}
+                
                 <input type="submit" value="Confirm Add Listing" style={{ padding: '10px 10px', border:'0.25px solid', borderRadius:'5px', marginTop:'10px'}}/>           
-                {/* :null
-            } */}
+                
                 </form>
                 </div>
                     :null

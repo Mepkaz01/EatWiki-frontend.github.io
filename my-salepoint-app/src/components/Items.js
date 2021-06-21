@@ -4,6 +4,7 @@ import { Link, Route } from  'react-router-dom'
 import ShoppingCart from './ShoppingCart';
 
 
+
 class Items extends React.Component {
 
     constructor(props){ 
@@ -21,7 +22,7 @@ componentDidMount =()=>{
     .then(resp =>{
         this.setState({
             items: resp.data
-            })
+            }) 
         }
     )
 }
@@ -93,10 +94,10 @@ render = ()=>{
             <Link to="" style={{padding:'4px 10px', textDecoration:'none', fontWeight:'bolder'}} >About</Link>
             </nav>
             <div>
-            <h1>Sneak Peek at All of Our Members' Listings</h1>
-            <h2>For more information <Link to="/signup">Sign Up</Link> or <Link to="/login">Log In</Link></h2>
+            <h1 style={{color:'#4682B4', fontWeight:'bolder'}}>Sneak Peek at All of Our Members' Listings</h1>
+            <h2>For more information <Link to="/signup" style={{textDecoration:'none', color:'#66CDAA'}}>Sign Up</Link> or <Link to="/login" style={{textDecoration:'none', color:'#FA8072'}}>Log In</Link></h2>
             <br></br>
-            <Link to="/">Back to Home Page</Link>
+            <Link to="/" style={{textDecoration:'none', fontSize:'150%', color:'orange'}}>Back to Home Page</Link>
             <br></br>
             <br></br>
             <button onClick={this.filterBooks}>Books</button>
@@ -124,10 +125,15 @@ render = ()=>{
 
             )}
             </div>
+<<<<<<< HEAD
         </div>  
 
         
         </div>  
+=======
+        </div>
+        </div>    
+>>>>>>> 49c2377d37ecd59970de64db1a72dd94e3aee1a5
             
      
     )

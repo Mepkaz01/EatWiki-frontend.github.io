@@ -70,11 +70,11 @@ class Profile extends Component {
 
   
     toggle1= () =>{
-        // const top=!this.state.top
+        
         this.setState({top:!this.state.top})
     }
     userItemToggle= () =>{
-        // const top=!this.state.top
+        
         this.setState({userItemTag:!this.state.userItemTag})
     }
     
