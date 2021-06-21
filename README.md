@@ -21,6 +21,22 @@ About our Project: E-Commerce site created to connect users either buying or sel
 7. Users should be able to add new listings to their Profile page
 8. Users should be able to see other users listings with seller's contact information
 9. Link to listings with limited information to attract users to sign up
+10. Add Shopping Cart to All Listings page and User Items page (Stage 1)
+
+# Screen Shots
+
+## Home Page
+![image](https://user-images.githubusercontent.com/82845234/122779931-593ed600-d27c-11eb-800b-6e335af0cba2.png)
+
+## User Profile Page
+![image](https://user-images.githubusercontent.com/82845234/122779959-5fcd4d80-d27c-11eb-87fb-aebbaa72a1cc.png)
+
+## Listings Page
+![image](https://user-images.githubusercontent.com/82845234/122780613-ff8adb80-d27c-11eb-92c3-0b9220de72c3.png)
+
+## Shopping Cart
+![image](https://user-images.githubusercontent.com/82845234/122779980-652a9800-d27c-11eb-9b64-ba3c06301b33.png)
+
 
 ## Technologies Used
 
@@ -37,3 +53,6 @@ About our Project: E-Commerce site created to connect users either buying or sel
 
 
 ## Unsolved Problems
+
+* Redirecting from All Listings to User Profile page - We noticed this last minute. We have to pass props from the parent to the child. However, we don't want to change our code now to not risk other functions. 
+* Stretch Goal - Shopping Cart implementation. It is currently in Stage 1. 
