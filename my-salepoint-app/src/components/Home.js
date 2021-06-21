@@ -36,10 +36,10 @@ class Home extends React.Component{
             
             </nav>
             <div style={{display:'flex', flexDirection:'column',justifyContent:'center', alignItems:'center'}}>
-            <h1>Welcome to Sale Point</h1>
-            <h2>Buy Smart and Sell with Confidence</h2>
+            <h1 style={{color:'white'}}>Welcome to Sale Point</h1>
+            <h2 style={{color:'orange'}}>Buy Smart and Sell with Confidence</h2>
             <div>
-            <Link to="/items">Peek All Listings</Link>
+            <Link to="/items" style={{textDecoration:'none', fontSize:'150%', color:'yellow'}}>Peek All Listings</Link>
             </div>
             <div style={{display:'flex', flexWrap:'wrap',justifyContent:'center', width:'500px', marginTop:'20px'}}>
             {this.state.items.map(item =>

@@ -29,19 +29,18 @@ handleDelete = (event) => {
     axios.delete(`http://localhost:3001/items/${this.props.match.params.indx}`)
     .then(resp => {
         console.log("Item Deleted");
-        console.log(resp)
-        // this.props.history.push('/')
         this.props.history.push(`/profile/${this.state.item.userId}`)
     })       
     
 }
+
 render = (props)=>{
     const item=this.state.item
 
     return(
         <div>
             
-            <h1> Item Sale </h1>
+            <h1> Listing Detail </h1>
             <div className="App1">
             <div style={{marginTop:'30px'}} >
                 <img src={item.image} alt="Pic" width='400' height="300"/>
